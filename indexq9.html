@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Question 9
+        </title>
+        <meta charset="UTF">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        var timeleft = 25;
+        var downloadTimer = setInterval(function(){
+            var x9;
+            var rad=$("input[name='country2']:checked").val();
+            if(rad==null){
+                    x9="";
+                    localStorage.setItem('answer9',x9);   
+                }
+                else if(rad==3){
+                    x9="correct";
+                    localStorage.setItem('answer9',x9);   
+                }else if(rad!=3){   
+                    x9="wrong";   
+                    localStorage.setItem('answer9',x9);           
+                }
+            if(timeleft <= 0){
+            clearInterval(downloadTimer);
+            document.getElementById("countdown").innerHTML = "Finish";
+            window.location.href="indexq10.html";
+        } else {
+        document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
+        }
+        timeleft -= 1;
+        }, 1000);
+        
+    </script>
+    </head>
+    <body>
+        <div class="Q9" style="text-align: center;margin-top: 100; border: black 1px solid; width: 450px; height: 350px; margin-left: 35%;padding-top: 30px;">
+                <h2>Q9: What are the main colors on the flag of Spain?</h2>
+            <input type="radio" class="false" name="country9" value="1"><label>Black and yellow</label><br>
+            <input type="radio" class="false" name="country9" value="2"><label>Green and white</label><br>
+            <input type="radio" class="true" name="country9" value="3"><label>Red and yellow</label><br>
+            <input type="radio" class="false" name="country9" value="4"><label>Blue and white</label><br>
+            <button id="next" style="margin-top: 30px;"><a href="indexq10.html"  style="text-decoration: none;">Next Question</a></button>   
+            <br><div id="countdown"></div>
+            <a id="q1" href="indexq10.html"></a>
+        </div>
+    </body>
+</html>

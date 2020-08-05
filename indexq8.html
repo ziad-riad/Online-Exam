@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Question 8
+        </title>
+        <meta charset="UTF">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        var timeleft = 25;
+        var downloadTimer = setInterval(function(){
+            var x8;
+            var rad=$("input[name='country8']:checked").val();
+            if(rad==null){
+                    x8="";
+                    localStorage.setItem('answer8',x8);   
+                }
+                else if(rad==3){
+                    x8="correct";
+                    localStorage.setItem('answer8',x8);   
+                }else if(rad!=3){   
+                    x8="wrong";   
+                    localStorage.setItem('answer8',x8);           
+                }
+            if(timeleft <= 0){
+            clearInterval(downloadTimer);
+            document.getElementById("countdown").innerHTML = "Finish";
+            window.location.href="indexq9.html";
+        } else {
+        document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
+        }
+        timeleft -= 1;
+        }, 1000);
+        
+    </script>
+    </head>
+    <body>
+        <div class="Q8" style="text-align: center;margin-top: 100; border: black 1px solid; width: 450px; height: 350px; margin-left: 35%;padding-top: 30px;">
+                <h2>Q8: How many rings are on the Olympic flag ?</h2>
+            <input type="radio" class="false" name="country8" value="1"><label>4</label><br>
+            <input type="radio" class="false" name="country8" value="2"><label>7</label><br>
+            <input type="radio" class="true" name="country8" value="3"><label>5</label><br>
+            <input type="radio" class="false" name="country8" value="4"><label>none</label><br>
+            <button id="next" style="margin-top: 30px;"><a href="indexq9.html"  style="text-decoration: none;">Next Question</a></button>   
+            <br><div id="countdown"></div>
+            <a id="q1" href="indexq9.html"></a>
+        </div>
+    </body>
+</html>

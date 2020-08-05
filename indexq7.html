@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Question 7
+        </title>
+        <meta charset="UTF">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        var timeleft = 25;
+        var downloadTimer = setInterval(function(){
+            var x7;
+            var rad=$("input[name='country7']:checked").val();
+            if(rad==null){
+                    x7="";
+                    localStorage.setItem('answer7',x7);   
+                }
+                else if(rad==3){
+                    x7="correct";
+                    localStorage.setItem('answer7',x7);   
+                }else if(rad!=3){   
+                    x7="wrong";   
+                    localStorage.setItem('answer7',x7);           
+                }
+            if(timeleft <= 0){
+            clearInterval(downloadTimer);
+            document.getElementById("countdown").innerHTML = "Finish";
+            window.location.href="indexq8.html";
+        } else {
+        document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
+        }
+        timeleft -= 1;
+        }, 1000);
+        
+    </script>
+    </head>
+    <body>
+        <div class="Q7" style="text-align: center;margin-top: 100; border: black 1px solid; width: 450px; height: 350px; margin-left: 35%;padding-top: 30px;">
+                <h2>Q7: How old are you?</h2>
+            <input type="radio" class="false" name="country7" value="1"><label>5-18</label><br>
+            <input type="radio" class="false" name="country7" value="2"><label>19-24</label><br>
+            <input type="radio" class="true" name="country7" value="3"><label>25-45</label><br>
+            <input type="radio" class="false" name="country7" value="4"><label>46-60</label><br>
+            <button id="next" style="margin-top: 30px;"><a href="indexq8.html"  style="text-decoration: none;">Next Question</a></button>   
+            <br><div id="countdown"></div>
+            <a id="q1" href="indexq8.html"></a>
+        </div>
+    </body>
+</html>

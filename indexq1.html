@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question 1</title>
+
+    <meta charset="UTF"></meta>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        var timeleft = 25;
+        var downloadTimer = setInterval(function(){
+            var x1;
+            var rad=$("input[name='country1']:checked").val();
+            if(rad==null){
+                    x1="";
+                    localStorage.setItem('answer1',x1);
+                }
+                else if(rad==3){
+                    x1="correct";
+                    localStorage.setItem('answer1',x1);   
+                }else if(rad!=3){   
+                    x1="wrong";   
+                    localStorage.setItem('answer1',x1);           
+                }
+            if(timeleft <= 0){
+            clearInterval(downloadTimer);
+            document.getElementById("countdown").innerHTML = "Finish";
+            window.location.href="indexq2.html";
+        } else {
+        document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
+        }
+        timeleft -= 1;
+        }, 1000);
+    </script>
+</head>
+
+<body>
+    <div
+        class="Q1"
+        style="text-align: center;margin-top: 100; border: black 1px solid; width: 450px; height: 350px; margin-left: 35%;padding-top: 30px;"
+    >
+        <h2>
+            Q1:Whats name of your country?
+        </h2>
+
+        <input
+            type="radio"
+            class="false"
+            name="country1"
+            value="1"
+        ></input>
+
+        <label>SAUDIA</label>
+
+        <br>
+
+        <input
+            type="radio"
+            class="false"
+            name="country1"
+            value="2"
+        ></input>
+
+        <label>AMERICA</label>
+
+        <br>
+
+        <input
+            type="radio"
+            class="true"
+            name="country1"
+            value="3"
+        ></input>
+
+        <label>JORDAN</label>
+
+        <br>
+
+        <input
+            type="radio"
+            class="false"
+            name="country1"
+            value="4"
+        ></input>
+
+        <label>ENGLAND</label>
+
+        <br>
+
+        <button
+            id="next"
+            style="margin-top: 30px;"
+        >
+            <a
+                href="indexq2.html"
+                style="text-decoration: none;"
+            >Next Question</a>
+        </button>
+
+        <br>
+        <div id="countdown"></div>
+
+        <a
+            id="q1"
+            href="indexq2.html"
+        ></a>
+    </div>
+</body>
+</html>

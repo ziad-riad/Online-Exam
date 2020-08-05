@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Question 10
+        </title>
+        <meta charset="UTF">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        var timeleft = 25;
+        var downloadTimer = setInterval(function(){
+            var x10;
+            var rad=$("input[name='country10']:checked").val();
+            if(rad==null){
+                    x10="";
+                    localStorage.setItem('answer10',x10);   
+                }
+                else if(rad==3){
+                    x10="correct";
+                    localStorage.setItem('answer10',x10);   
+                }else if(rad!=3){   
+                    x10="wrong";   
+                    localStorage.setItem('answer10',x10);           
+                }
+            if(timeleft <= 0){
+            clearInterval(downloadTimer);
+            document.getElementById("countdown").innerHTML = "Finish";
+            window.location.href="Success.html";
+        } else {
+        document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
+        }
+        timeleft -= 1;
+        }, 1000);
+        
+    </script>
+    </head>
+    <body>
+        <div class="Q10" style="text-align: center;margin-top: 100; border: black 1px solid; width: 450px; height: 350px; margin-left: 35%;padding-top: 30px;">
+                <h2>Q10: What is the longest that an elephant has ever lived? </h2>
+            <input type="radio" class="false" name="country10" value="1"><label>17 Year</label><br>
+            <input type="radio" class="false" name="country10" value="2"><label>49 year</label><br>
+            <input type="radio" class="true" name="country10" value="3"><label>86 year</label><br>
+            <input type="radio" class="false" name="country10" value="4"><label>142 year</label><br>
+            <button id="next" style="margin-top: 30px;"><a href="Success.html"  style="text-decoration: none;">NFinish</a></button>   
+            <br><div id="countdown"></div>
+            <a id="q1" href="Success.html"></a>
+        </div>
+    </body>
+</html>

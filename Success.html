@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Question 10
+        </title>
+        <meta charset="UTF">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        window.onload = function dis(){	
+
+var answers = ["answer1", "answer2", "answer3","answer4", "answer5", "answer6","answer7", "answer8", "answer9", "answer10"];
+var correct=0,total=0;	
+
+for(var i=0;i<answers.length;i++){
+if(localStorage.getItem(answers[i])==="correct"){
+    correct++;
+    total++;
+}else{
+    total++;
+}}
+
+$("#q22").html(correct);		
+$("#q11").html(localStorage.getItem('answer'));
+
+if(localStorage.getItem('answer1')===null||localStorage.getItem('answer1')===""){
+    $("#q12").html("you missed the question").css("color","red");
+}
+else if(localStorage.getItem('answer1')==="correct"){
+    $("#q12").html(localStorage.getItem('answer1')).css("color","green");
+}else{
+    $("#q12").html(localStorage.getItem('answer1')).css("color","red");
+
+}if(localStorage.getItem('answer2')===null||localStorage.getItem('answer2')===""){
+    $("#q13").html("you missed the question").css("color","red");
+}
+else if(localStorage.getItem('answer2')==="correct"){
+    $("#q13").html(localStorage.getItem('answer2')).css("color","green");
+}else{
+    $("#q13").html(localStorage.getItem('answer2')).css("color","red");
+}
+if(localStorage.getItem('answer3')===null||localStorage.getItem('answer3')===""){
+    $("#q14").html("you missed the question").css("color","red");
+}
+else if(localStorage.getItem('answer3')==="correct"){
+    $("#q14").html(localStorage.getItem('answer3')).css("color","green");
+}else{
+    $("#q14").html(localStorage.getItem('answer3')).css("color","red");
+}
+if(localStorage.getItem('answer4')===null||localStorage.getItem('answer4')===""){
+    $("#q15").html("you missed the question").css("color","red");
+}
+else if(localStorage.getItem('answer4')==="correct"){
+    $("#q15").html(localStorage.getItem('answer4')).css("color","green");
+}else{
+    $("#q15").html(localStorage.getItem('answer4')).css("color","red");
+}
+if(localStorage.getItem('answer5')===null||localStorage.getItem('answer5')===""){
+    $("#q16").html("you missed the question").css("color","red");
+}
+else if(localStorage.getItem('answer5')==="correct"){
+    $("#q16").html(localStorage.getItem('answer5')).css("color","green");
+}else{
+    $("#q16").html(localStorage.getItem('answer5')).css("color","red");
+}
+if(localStorage.getItem('answer6')===null||localStorage.getItem('answer6')===""){
+    $("#q17").html("you missed the question").css("color","red");
+}
+else if(localStorage.getItem('answer6')==="correct"){
+    $("#q17").html(localStorage.getItem('answer6')).css("color","green");
+}else{
+    $("#q17").html(localStorage.getItem('answer6')).css("color","red");
+}
+if(localStorage.getItem('answer7')===null||localStorage.getItem('answer7')===""){
+    $("#q18").html("you missed the question").css("color","red");
+}
+else if(localStorage.getItem('answer7')==="correct"){
+    $("#q18").html(localStorage.getItem('answer7')).css("color","green");
+}else{
+    $("#q18").html(localStorage.getItem('answer7')).css("color","red");
+}
+if(localStorage.getItem('answer8')===null||localStorage.getItem('answer8')===""){
+    $("#q19").html("you missed the question").css("color","red");
+}
+else if(localStorage.getItem('answer8')==="correct"){
+    $("#q19").html(localStorage.getItem('answer8')).css("color","green");
+}else{
+    $("#q19").html(localStorage.getItem('answer8')).css("color","red");
+}
+if(localStorage.getItem('answer9')===null||localStorage.getItem('answer9')===""){
+    $("#q20").html("you missed the question").css("color","red");
+}
+else if(localStorage.getItem('answer9')==="correct"){
+    $("#q20").html(localStorage.getItem('answer9')).css("color","green");
+}else{
+    $("#q20").html(localStorage.getItem('answer9')).css("color","red");
+}
+if(localStorage.getItem('answer10')===null||localStorage.getItem('answer10')===""){
+    $("#q21").html("you missed the question").css("color","red");
+}
+else if(localStorage.getItem('answer10')==="correct"){
+    $("#q21").html(localStorage.getItem('answer10')).css("color","green");
+}else{
+    $("#q21").html(localStorage.getItem('answer10')).css("color","red");
+}
+$("#back1").click(function(){
+            localStorage.clear();
+            window.location.href="index.html";
+        });
+}
+    </script>
+    <style>
+        td{
+            border: black solid 1px;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="row" style="margin-left: 300px;margin-top:250px;">
+
+			<div id="table1" style =>
+				<table style= "border: solid 1px black ;">
+					<tr ><td id="q11"></td></tr>
+					<tr >
+						<td>Question1</td>
+						<td id="q12"></td>
+					</tr>
+					<tr >
+						<td>Question2</td>
+						<td id="q13"></td>
+					</tr>
+					<tr >
+						<td>Question3</td>
+						<td id="q14"></td>
+					</tr>
+					<tr >
+						<td>Question4</td>
+						<td id="q15" ></td>
+					</tr>
+					<tr >
+						<td>Question5</td>
+						<td id="q16"></td>
+					</tr>
+					<tr >
+						<td>Question6</td>
+						<td id="q17"></td>
+					</tr>
+					<tr >
+						<td>Question7</td>
+						<td id="q18"></td>
+					</tr>
+					<tr >
+						<td>Question8</td>
+						<td id="q19"></td>
+					</tr>
+					<tr >
+						<td>Question9</td>
+						<td id="q20"></td>
+					</tr>
+					<tr >
+						<td>Question10</td>
+						<td id="q21"></td>
+					</tr>
+					<tr >
+						<td>total</td>
+						<td class="text-center"id="q22"></td>
+					</tr>
+				</table>
+					<input type="Button" name="" value="back to index" id="back1" onClick="" />
+			</div>
+		</div>
+        
+    </body>
+</html>
